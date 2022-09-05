@@ -8,10 +8,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-
-
-
-
 /* custom radio buttons */
 
 input[type='radio']:after {
@@ -49,4 +45,8 @@ input[type='checkbox']:after {
   display: inline-block;
   visibility: visible;
   border: 1px solid black;
+}
+
+.background_mask{
+  background: rgba(82, 82, 82, 0.45);
 }

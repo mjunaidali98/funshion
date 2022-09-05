@@ -28,7 +28,7 @@ const Index = () => {
     ])
     return (
         <div className="flex items-center h-[75px] w-full shadow-header bg-white">
-            <div className="container mx-auto pl-10 lg:pl-16 ">
+            <div className="container mx-auto px-4 md:pl-10 lg:pl-16 ">
                 <div className="flex justify-between items-center">
                     <p className="text-[32px] font-extrabold leading-5">Funshion</p>
                     <div className="flex items-center space-x-20">

@@ -1,24 +1,21 @@
 import dynamic from "next/dynamic"
-import { useState } from "react"
-import { useStore } from "../context"
-const FreeShiping = dynamic(() => import("/components/freeShiping"))
-const Header = dynamic(() => import("/components/header"))
-const LoginForm = dynamic(() => import("/components/loginForm"))
-const SignupForm = dynamic(() => import("/components/signUpForm"))
-const Footer = dynamic(() => import("/components/footer"))
+const Layout = dynamic(() => import("/components/layout"))
+const Homepage = dynamic(() => import("/components/homepage"))
 
-export default function Login() {
-  const { screen } = useStore();
-
+const Index = ({ products }) => {
   return (
-    <>
-      <FreeShiping />
-      <Header />
-
-      {screen.includes("login") ? <LoginForm /> :
-        <SignupForm />
-      }
-      <Footer/>
-    </>
+    <Layout>
+      <Homepage />
+    </Layout>
   )
 }
+export default Index
+
+// export async function getStaticProps(context) {
+//   const res = await fetch(`${process.env.API_URL}/products`);
+//   const products = await res.json();
+//   // console.log("products", products)
+//   return {
+//     props: { products }
+//   };
+// }
