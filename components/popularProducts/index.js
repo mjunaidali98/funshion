@@ -9,11 +9,13 @@ const Index = ({ products }) => {
             <p className="text-sm font-medium text-center mt-1 mb-14">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
                 {!products ? <>Loading</>
                     : products && products.length > 0 ? products.map((product) => {
                         return (
-                            <Product {...product} key={product.id} />
+                            <div key={product.id} className="w-auto">
+                                <Product {...product} key={product.id} height={"356px"}/>
+                            </div>
                         )
                     })
                         : <p className="text-center"> No Record Found</p>

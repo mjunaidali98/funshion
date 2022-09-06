@@ -5,6 +5,7 @@ const ShowCounter = dynamic(() => import("../common/counter/showCounter"))
 const Categories = dynamic(() => import("/components/categories"))
 const PopularProducts = dynamic(()=> import ("/components/popularProducts"))
 const FeatureProducts = dynamic(()=> import ("/components/featureProducts"))
+const Subscribe = dynamic(()=> import ("/components/subscribe"))
 
 const Index = ({products}) => {
     const { timeLeft } = useStore();
@@ -75,6 +76,8 @@ const Index = ({products}) => {
             <Categories />
             <PopularProducts products={products}/>
             <FeatureProducts />
+
+            <Subscribe/>
         </>
     )
 }

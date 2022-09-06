@@ -1,3 +1,4 @@
+import Category from "../categories/category"
 import Product from "/components/common/product"
 const Index = () => {
     return (
@@ -9,16 +10,16 @@ const Index = () => {
                 <p className="text-sm font-medium text-center mt-1 mb-14">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </p>
-                <div className='grid grid-cols-4 grid-rows-2'>
-                    <Product />
-                    <Product />
-                    <div className="col-span-2 row-span-2">
-                        <Product />
+                <div className="">
+                    <div className='grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full h-full'>
+                        <Product height={"274px"} />
+                        <Product height={"274px"} />
+                        <div className="lg:col-span-2 lg:row-span-2">
+                            <Product height={"568px"} />
+                        </div>
+                        <Product height={"274px"} />
+                        <Category text={"30% OFF!"} checkout={false} height={"274px"}/>
                     </div>
-                    <Product />
-                    <Product />
-
-
                 </div>
             </div>
         </div>
