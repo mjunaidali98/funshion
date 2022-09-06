@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 const DateTimeDisplay = dynamic(() => import("./dateTimeDisplay"));
 const ShowCounter = ({ days, hours, minutes, seconds }) => {
     return (
-        <div className="flex space-x-2 text-[43px] text-white font-bold leading-[53px]">
+        <div className="flex space-x-2 text-[30px] md:text-[35px] lg:text-[43px] text-white font-bold leading-[53px]">
 
             <DateTimeDisplay value={days} type={'Days'} isDanger={days <= 3} />
             <p>:</p>

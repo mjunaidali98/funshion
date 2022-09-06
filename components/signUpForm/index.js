@@ -77,11 +77,11 @@ function Index() {
             </form>
             <div className="mt-7 flex items-center  justify-center">
                 <a target={"_blank"} href="javascript:void(0)" rel="noreferrer">
-                    <p className=" text-[10px] leading-3 ">Privacy Policy and Cookies</p>
+                    <span className=" text-[10px] leading-3 ">Privacy Policy and Cookies</span>
                 </a>
                 <div className="h-2.5 mx-2.5 border-l-2 border-black " />
                 <a target={"_blank"} href="javascript:void(0)" rel="noreferrer">
-                    <p className=" text-[10px] leading-3 ">Privacy Policy and Cookies</p>
+                    <span className=" text-[10px] leading-3 ">Privacy Policy and Cookies</span>
                 </a>
             </div>
 

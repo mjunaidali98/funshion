@@ -47,7 +47,7 @@ const Index = () => {
                     <div className="flex items-center justify-between w-full mt-3">
                         <Link href={"javascript:void(0)"}>
                             <a>
-                                <p className=" text-[10px] leading-3 font-medium">Forgot Your Password</p>
+                                <span className=" text-[10px] leading-3 font-medium">Forgot Your Password</span>
                             </a>
                         </Link>
 
@@ -88,11 +88,11 @@ const Index = () => {
             </form>
             <div className="mt-7 flex items-center  justify-center">
                 <a target={"_blank"} rel="noreferrer" href="javascript:void(0)">
-                    <p className=" text-[10px] leading-3 ">Privacy Policy and Cookies</p>
+                    <span className=" text-[10px] leading-3 ">Privacy Policy and Cookies</span>
                 </a>
                 <div className="h-2.5 mx-2.5 border-l-2 border-black " />
                 <a target={"_blank"} rel="noreferrer" href="javascript:void(0)">
-                    <p className=" text-[10px] leading-3 ">Privacy Policy and Cookies</p>
+                    <span className=" text-[10px] leading-3 ">Privacy Policy and Cookies</span>
                 </a>
             </div>
 
