@@ -9,7 +9,6 @@ export const reducer = (state, action) => {
         case "SET_SCREEN": return { ...state, screen: action.payload };
         case "SET_DISCOUNT_END_DATE": return { ...state, timeLeft: action.payload };
         case "SET_POPULAR": {
-            console.log("action.payload", action.payload)
             return { ...state, popularProducts: action.payload };
         }
         default: return { ...state };

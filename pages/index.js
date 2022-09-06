@@ -15,7 +15,6 @@ export default Index
 export async function getStaticProps(context) {
   const res = await fetch(`${process.env.API_URL}/products?limit=5`);
   const products = await res.json();
-  // console.log("products", products)
   return {
     props: { products }
   };
