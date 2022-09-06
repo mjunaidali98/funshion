@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Index = ({ title, image, price, rating, category, id, height}) => {
+const Index = ({ title, image, price, rating, category, id, height }) => {
     return (
 
         <div key={id} className="flex flex-col justify-between w-full h-full group cursor-pointer">
-            <div className=''>
+            <div className='h-full w-full'>
                 <div className='relative'>
                     <div className={`h-[${height}] w-full`}>
                         <img className="group w-full h-full" src={image ? image : "/assets/images/p1.png"} />
@@ -33,22 +33,23 @@ const Index = ({ title, image, price, rating, category, id, height}) => {
                         </div>
                     </div>
                 </div>
-                <div className="flex items-center justify-between mt-4">
-                    {category ? <p className="text-sm font-medium capitalize">{category}</p> : null}
-                    {rating && rating.rate ?
-                        <div className="flex items-center space-x-0.5">
-                            {[... new Array(5)].map((item, idx) => {
-                                return (
-                                    <svg key={idx} width="16" height="15" viewBox="0 0 16 15" fill={Math.round(rating.rate) >= idx + 1 ? "#F09522" : "none"} xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 1.61803L9.32058 5.68237L9.43284 6.02786H9.79611H14.0696L10.6123 8.53976L10.3184 8.75329L10.4306 9.09878L11.7512 13.1631L8.29389 10.6512L8 10.4377L7.70611 10.6512L4.24877 13.1631L5.56936 9.09878L5.68162 8.75329L5.38772 8.53976L1.93039 6.02786H6.20389H6.56716L6.67942 5.68237L8 1.61803Z"
-                                            stroke={Math.round(rating.rate) >= idx + 1 ? "#F09522" : "#EFEFEF"} />
-                                    </svg>
+                {category || rating ?
+                    <div className="flex items-center justify-between mt-4">
+                        {category ? <p className="text-sm font-medium capitalize">{category}</p> : null}
+                        {rating && rating.rate ?
+                            <div className="flex items-center space-x-0.5">
+                                {[... new Array(5)].map((item, idx) => {
+                                    return (
+                                        <svg key={idx} width="16" height="15" viewBox="0 0 16 15" fill={Math.round(rating.rate) >= idx + 1 ? "#F09522" : "none"} xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 1.61803L9.32058 5.68237L9.43284 6.02786H9.79611H14.0696L10.6123 8.53976L10.3184 8.75329L10.4306 9.09878L11.7512 13.1631L8.29389 10.6512L8 10.4377L7.70611 10.6512L4.24877 13.1631L5.56936 9.09878L5.68162 8.75329L5.38772 8.53976L1.93039 6.02786H6.20389H6.56716L6.67942 5.68237L8 1.61803Z"
+                                                stroke={Math.round(rating.rate) >= idx + 1 ? "#F09522" : "#EFEFEF"} />
+                                        </svg>
 
-                                )
-                            })}
-                        </div> : null
-                    }
-                </div>
+                                    )
+                                })}
+                            </div> : null
+                        }
+                    </div> : null}
                 {title ? <p className="text-lg mt-2 mb-4 font-semibold">{title}</p> : null}
             </div>
             {price ?
