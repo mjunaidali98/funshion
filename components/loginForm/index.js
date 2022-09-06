@@ -2,9 +2,26 @@ import Link from "next/link"
 import Input from "../common/input"
 import Button from "../common/button"
 import { useStore } from "../../context";
+import Router from "next/router";
 const Index = () => {
     const { screen, dispatch } = useStore();
+    const handleSignup = () => {
+        const path = "/signup"
+        Router.push(path);
+        dispatch({
+            type: "SET_SCREEN",
+            payload: "signup"
+        })
+    }
 
+    const handleLogin = () => {
+        const path = "/login"
+        Router.push(path);
+        dispatch({
+            type: "SET_SCREEN",
+            payload: "login"
+        })
+    }
     return (
         <div className="mt-[120px] max-w-[306px] mx-auto pb-16">
             <p className={`text-[28px] leading-8 font-bold uppercase text-center`}>
@@ -15,10 +32,7 @@ const Index = () => {
                 <div className="flex mt-7 justify-center space-x-7">
                     <div>
                         <label className="inline-flex items-center cursor-pointer">
-                            <input onChange={() => dispatch({
-                                type: "SET_SCREEN",
-                                payload: "login"
-                            })}
+                            <input onChange={() => handleLogin()}
                                 role={"button"}
 
                                 checked={screen.includes("login")}
@@ -28,13 +42,9 @@ const Index = () => {
                     </div>
                     <div>
                         <label className="inline-flex items-center cursor-pointer">
-                            <input onChange={() => dispatch({
-                                type: "SET_SCREEN",
-                                payload: "signup"
-                            })}
+                            <input onChange={() => handleSignup()}
                                 checked={screen.includes("signup")}
                                 role={"button"}
-
                                 type="radio" className="w-4 h-4 border border-black flex items-center justify-center flex-col" name="radio-colors" defaultValue={2} />
                             <span className="ml-2.5 text-xs leading-[14.52px] font-medium">Create Account</span>
                         </label>
@@ -71,7 +81,7 @@ const Index = () => {
                     <div className="mt-3.5 flex flex-col items-center justify-center">
                         <p className="text-[10px] leading-3 font-semibold">Sign in with</p>
                         <div className="mt-3 flex items-center justify-center space-x-5">
-                            <a href="javascript:void(0)" rel="noreferrer" target={"_blank" }>
+                            <a href="javascript:void(0)" rel="noreferrer" target={"_blank"}>
                                 <img src="./assets/images/Google.svg" />
                             </a>
                             <a href="javascript:void(0)" rel="noreferrer" target={"_blank"}>

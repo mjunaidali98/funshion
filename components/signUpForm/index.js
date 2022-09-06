@@ -1,8 +1,26 @@
 import Input from "../common/input"
 import Button from "../common/button"
 import { useStore } from '../../context';
+import Router from "next/router";
 function Index() {
     const { screen, dispatch } = useStore();
+    const handleSignup = () => {
+        const path = "/signup"
+        Router.push(path);
+        dispatch({
+            type: "SET_SCREEN",
+            payload: "signup"
+        })
+    }
+
+    const handleLogin = () => {
+        const path = "/login"
+        Router.push(path);
+        dispatch({
+            type: "SET_SCREEN",
+            payload: "login"
+        })
+    }
     return (
         <div className="mt-[120px] max-w-[306px] mx-auto pb-16">
             <p className={`text-[28px] leading-8 font-bold uppercase text-center`}>
@@ -15,10 +33,7 @@ function Index() {
                         <label className="inline-flex items-center cursor-pointer">
                             <input
                                 role={"button"}
-                                onChange={() => dispatch({
-                                    type: "SET_SCREEN",
-                                    payload: "login"
-                                })}
+                                onChange={() => handleLogin()}
                                 checked={screen.includes("login")}
                                 type="radio" className="w-4 h-4 border border-black flex items-center justify-center flex-col" name="radio-colors" defaultValue={1} defaultChecked />
                             <span className="ml-2.5 text-xs leading-[14.52px] font-medium">Sign In</span>
@@ -28,10 +43,7 @@ function Index() {
                         <label className="inline-flex items-center cursor-pointer">
                             <input
                                 role={"button"}
-                                onChange={() => dispatch({
-                                    type: "SET_SCREEN",
-                                    payload: "signup"
-                                })}
+                                onChange={() => handleSignup()}
                                 checked={screen.includes("signup")}
                                 type="radio" className="w-4 h-4 border border-black flex items-center justify-center flex-col" name="radio-colors" defaultValue={2} />
                             <span className="ml-2.5 text-xs leading-[14.52px] font-medium">Create Account</span>
@@ -45,8 +57,6 @@ function Index() {
                     <Input style={"mt-4"} inputRequired={true} type={"password"} label="Confirm Password" required={true} />
                     <Input inputRequired={true} style={"mt-4"} type={"text"} label="Address" required={true} />
                     <Input inputRequired={true} style={"mt-4"} type={"text"} label="Phone" required={true} />
-
-
 
                     <Button type={"submit"} text={"Sign Up"} style="py-3 w-full mt-6 leading-[16.94px]" />
 
